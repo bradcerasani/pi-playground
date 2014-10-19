@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <title>Hello World</title>
+  <style>
+    body {
+      font-family: "helvetica neue";
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <canvas id="graph" width="800" height="400"></canvas>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="scripts/chart.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <script type="text/javascript">
+
+    var ctx = $("#graph").get(0).getContext("2d");
+
+    var data = {
+      labels: ["1:00","1:30","2:00","2:30","3:00","3:30","4:00"],
+        datasets: [
+          {
+            fillColor : "rgba(99,123,133,0.4)",
+            strokeColor : "rgba(220,220,220,1)",
+            pointColor : "rgba(220,220,220,1)",
+            pointStrokeColor : "#fff",
+            data : [34,21,30,22,25,15,18,24]
+          }
+        ]
+    };
+
+    var newChart = new Chart(ctx).Line(data);
+
+    function randomNum(max) {
+      return Math.floor((Math.random() * max) + 1);
+    }
+
+    setInterval(function() {
+      newChart.datasets[0].points[randomNum(7)].value = randomNum(40);
+      newChart.update();
+    }, 1000);
+
+  </script>
+</body>
+</html>

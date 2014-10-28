@@ -1,4 +1,4 @@
-# Mount Raspberry Pi as a Disk in OS X
+# Mount Raspberry Pi as Disk in OS X
 
 1. Download and install OSXFUSE and SSHFS [here](http://osxfuse.github.io/)
 
@@ -7,13 +7,11 @@
 ```
 cd ~/Desktop
 ```
-
 3. Create a folder to mount the Pi
 
 ```
 mkdir Pi
 ```
-
 4. Mount the Pi using SSHFS
 
 ```

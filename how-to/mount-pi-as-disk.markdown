@@ -1,21 +1,19 @@
 # Mount Raspberry Pi as Disk in OS X
 
-1. Download and install OSXFUSE and SSHFS [here](http://osxfuse.github.io/)
+This will allow you to mount your Pi as you would any other disk in OS X.
 
-2. Navigate to _one directory up_ from the directory you'd like to mount the Pi into
+### Instructions
 
-```
-cd ~/Desktop
-```
-3. Create a folder to mount the Pi
+Install [OSXFUSE](http://osxfuse.github.io/) and [SSHFS](http://osxfuse.github.io/)
 
-```
-mkdir Pi
-```
-4. Mount the Pi using SSHFS
+Navigate _one directory up_ from the directory you'd like to mount the Pi into
 
-```
-sshfs pi@192.168.100.116: Pi
-```
+`cd ~/Documents/Development`
 
-You can now drag and drop files to/from your Pi as you would any other mounted drive.
+Create a folder to mount the Pi in
+
+`mkdir Pi`
+
+Mount the Pi using SSHFS
+
+`sshfs pi@192.168.100.116: Pi`
